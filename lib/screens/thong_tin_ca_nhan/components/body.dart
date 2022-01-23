@@ -4,6 +4,7 @@ import 'package:doan/screens/thong_tin_ca_nhan/components/profile_menu.dart';
 import 'package:doan/screens/thong_tin_ca_nhan/components/profile_pic.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:doan/screens/Profile/Profile.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -15,7 +16,7 @@ class Body extends StatelessWidget {
         ProfileMenu(
           icon: "assets/icons/User Icon.svg",
           text: "Tài Khoản",
-          press: () {},
+          press: () => {},
         ),
         ProfileMenu(
           icon: "assets/icons/Bill Icon.svg",

@@ -1,0 +1,36 @@
+{
+  "accounts": [
+    {
+      "id": 1,
+      "fullName": "Lelongtoan",
+      "address1": "28 Nguyễn Tri Phương, Phú Nhuận, TP Huế",
+      "address2": "28 Nguyễn Tri Phương, Phú Nhuận, TP Huế",
+      "email": "toanle0120@gmail.com",
+      "phone": "Lelongtoan123",
+      "avatar": "Lelongtoan123",
+      "isAdmin": 0,
+      "status": 1,
+      "password": "Lelongtoan1"
+    },
+    {
+      "id": 2,
+      "fullName": "Lelongtoan",
+      "address1": "28 Nguyễn Tri Phương, Phú Nhuận, TP Huế",
+      "address2": "28 Nguyễn Tri Phương, Phú Nhuận, TP Huế",
+      "email": "toanle012@gmail.com",
+      "phone": "Lelongtoan123",
+      "avatar": "Lelongtoan123",
+      "isAdmin": 0,
+      "status": 1,
+      "password": "Lelongtoan123"
+    },
+    {
+      "email": "123",
+      "password": "23",
+      "id": 3
+    },
+    {
+      "id": 4
+    }
+  ]
+}
