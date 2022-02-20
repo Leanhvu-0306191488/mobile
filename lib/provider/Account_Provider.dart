@@ -1,3 +1,4 @@
+import 'package:doan/repository/api.dart';
 import 'package:flutter/material.dart';
 import 'package:doan/models/Account.dart';
 import 'dart:convert';
@@ -7,7 +8,15 @@ import 'package:provider/provider.dart';
 
 class AccountProvider with ChangeNotifier {
   List<Account> _accounts = [];
+  bool loading = false;
   List<Account> get accounts => _accounts;
+
+  login(email, password) async {
+    loading = true;
+    _accounts = await Login(email, password);
+    loading = false;
+    notifyListeners();
+  }
 
   Future<List<Account>> getAllAccount() async {
     List responseList = [];

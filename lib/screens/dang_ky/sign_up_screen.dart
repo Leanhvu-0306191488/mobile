@@ -10,7 +10,7 @@ class SignUpscreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Sign Up"),
       ),
-      body: Body(),
+      body: SignUpForm(),
     );
   }
 }

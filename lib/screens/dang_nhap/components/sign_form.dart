@@ -6,10 +6,13 @@ import 'package:doan/components/custom_suffix_icon.dart';
 import 'package:doan/components/default_button.dart';
 import 'package:doan/components/form_error.dart';
 import 'package:doan/models/Account.dart';
+import 'package:doan/provider/Account_Provider.dart';
+import 'package:doan/screens/dang_ky/sign_up_screen.dart';
 import 'package:doan/screens/trangchinh/home_screen.dart';
 import 'package:doan/screens/quen_mat_khau/forgot_password_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 import 'FormHelper.dart';
@@ -154,31 +157,6 @@ class _SignFormState extends State<SignForm> {
     });
   }
 
-  Widget LoginCheck(BuildContext context, String email, String password) {
-    return FutureBuilder<List<Account>>(
-      future: _getAllAccount(),
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          List<Account>? data = snapshot.data;
-          return Column(
-            children: [
-              ...List.generate(
-                data!.length,
-                (index) {
-                  return CheckLogin(
-                      context, data[index].email, data[index].password);
-                },
-              )
-            ],
-          );
-        } else if (snapshot.hasError) {
-          return Text("${snapshot.error}");
-        }
-        return CircularProgressIndicator();
-      },
-    );
-  }
-
   Widget Login(BuildContext context) {
     return Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -202,10 +180,23 @@ class _SignFormState extends State<SignForm> {
           Center(
             child: FormHelper.saveButton(
               "Login",
-              () {
+              () async {
                 if (validateAndSave()) {
-                  LoginCheck(context, email, password);
+                  await Provider.of<AccountProvider>(context, listen: false)
+                      .login(email, password);
+                  Navigator.pushNamed(context, HomeScreen.routeName);
                 }
+              },
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Center(
+            child: FormHelper.saveButton(
+              "Register",
+              () async {
+                Navigator.pushNamed(context, SignUpscreen.routeName);
               },
             ),
           ),

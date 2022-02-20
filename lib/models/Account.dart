@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 
 class Account {
   int id;
-  String fullName;
+  String username;
   String password;
   String email;
-  String address1;
-  String address2;
+  String fullname;
+  String address;
   String phone;
   String avatar;
   bool isAdmin;
@@ -16,11 +16,11 @@ class Account {
 
   Account({
     required this.id,
-    required this.fullName,
+    required this.username,
     required this.password,
     required this.email,
-    required this.address1,
-    required this.address2,
+    required this.fullname,
+    required this.address,
     required this.phone,
     required this.avatar,
     required this.isAdmin,
@@ -29,29 +29,14 @@ class Account {
 
   factory Account.fromJson(Map<String, dynamic> json) => Account(
         id: json['id'],
-        fullName: json['fullName'],
+        username: json['username'],
         password: json['password'],
         email: json['email'],
-        address1: json['address1'],
-        address2: json['address2'],
+        fullname: json['fullname'],
+        address: json['address'],
         phone: json['phone'],
         avatar: json['avatar'],
         isAdmin: json['isAdmin'],
         status: json['status'],
       );
 }
-
-List<Account> demoAccount = [
-  Account(
-    id: 1,
-    fullName: "1",
-    password: "Lelongtoan123",
-    email: "toanle0120@gmail.com",
-    address1: "1",
-    address2: "1",
-    phone: "1",
-    avatar: "assets/images/nikeair1.jfif",
-    isAdmin: false,
-    status: true,
-  ),
-];

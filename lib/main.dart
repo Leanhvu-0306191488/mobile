@@ -1,4 +1,5 @@
 import 'package:doan/constants.dart';
+import 'package:doan/provider/Account_Provider.dart';
 import 'package:doan/screens/splash/splash_screen.dart';
 import 'package:doan/screens/thong_tin_ca_nhan/profile_screen.dart';
 import 'package:doan/theme.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (_) => CartProviders()),
           ChangeNotifierProvider(create: (_) => ProductProvider()),
-          ChangeNotifierProvider(create: (_) => FavoriteProvider())
+          ChangeNotifierProvider(create: (_) => FavoriteProvider()),
+          ChangeNotifierProvider(create: (_) => AccountProvider()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
