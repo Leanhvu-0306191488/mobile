@@ -1,6 +1,7 @@
 import 'package:doan/components/default_button.dart';
 import 'package:doan/constants.dart';
 import 'package:doan/models/Cart.dart';
+import 'package:doan/screens/Payment/Payment_screen.dart';
 import 'package:doan/screens/gio_hang/components/body.dart';
 import 'package:doan/size_config.dart';
 
@@ -104,7 +105,8 @@ class CheckOutCart extends StatelessWidget {
                   width: getProportionateScreenWidth(190),
                   child: DefaultButton(
                     text: "Thanh toán",
-                    press: () {},
+                    press: () =>
+                        Navigator.pushNamed(context, PayScreen.routeName),
                   ),
                 )
               ],

@@ -1,4 +1,6 @@
 import 'package:doan/models/Product.dart';
+import 'package:doan/screens/Payment/Payment_screen.dart';
+import 'package:doan/screens/Payment/components/Pay.dart';
 import 'package:doan/screens/chi_tiet_san_pham/details_screen.dart';
 import 'package:doan/screens/complete_profile/complete_profile_screen.dart';
 import 'package:doan/screens/dang_ky/sign_up_screen.dart';
@@ -29,4 +31,6 @@ final Map<String, WidgetBuilder> routes = {
   MyOrder.routeName: (context) => MyOrder(),
   Products.routeName: (context) => Products(),
   SignUpscreen.routeName: (context) => SignUpscreen(),
+  PayScreen.routeName: (context) => PayScreen(),
+  Pay.routeName: (context) => Pay(),
 };
